@@ -20,20 +20,27 @@ body
    color: #222222
 
 .header
-
+   width: 100%
+   background: #FFFFFF
+   position: fixed
+   top: 0
+   left: 0
+   z-index: 3
    &__wrap
       @extend %w120
       display: flex
       align-items: center
-      background: #FFFFFF
+
       box-shadow: 0px -4px 19px rgba(0, 0, 0, 0.03)
       border-radius: 30px
       padding: 19px 28px
       margin-top: 20px
    &__logo
       flex: 0 1 140px
+      z-index: 4
    &__menu
       flex: 0 1 720px
+      z-index: 3
    &__list
       display: flex
       column-gap: 48px
@@ -41,6 +48,8 @@ body
       flex: 0 1 140px
       column-gap: 20px
       display: flex
+      z-index: 4
+      position: relative
 .logo-header
 
    &__log
@@ -53,13 +62,13 @@ body
          text-decoration: none
          color: #222222
 .icon-header
-
+   z-index: 4
    &__svg
 
 .button-header
 
    &__but
-      padding: 12px 15px
+
       font-size: 13px
       line-height: 14px
       text-align: center
@@ -67,6 +76,8 @@ body
       color: #FFFFFF
       background: #2F2F2F
       border-radius: 20px
+      width: 144px
+      height: 40px
 
 //digital start
 .digital
@@ -161,7 +172,7 @@ body
    background: rgba(255, 255, 255, 0.85)
    box-shadow: 0px -4px 19px rgba(0, 0, 0, 0.03)
    border-radius: 30px
-   z-index: 3
+   z-index: 2
    img
       width: 41px
       height: 41px
@@ -174,6 +185,15 @@ body
       letter-spacing: 0.48px
       color: #2F2F2F
 //digital end
+@media(max-width: 767px)
+   .digital__wrap
+      display: block
+   .digital__container
+      justify-content: center
+   .digital__wrap
+      padding-top: 60px
+   .digital__lee
+      display: none
 //line start
 .line
    &__wrap
@@ -189,6 +209,10 @@ body
 .swiper-wrapper
 .swiper-slide
 //line end
+@media(max-width: 767px)
+   .line
+      &__wrap
+         padding-top: 100px
 //hey end
 .hey
 
@@ -214,7 +238,7 @@ body
       line-height: 26px
       text-align: center
       letter-spacing: 0.48px
-      width: 610px
+      max-width: 610px
 .hey__container
 
 .tabs
@@ -296,6 +320,19 @@ body
       letter-spacing: 0.48px
       color: #2F2F2F
 //hey end
+@media(max-width: 767px)
+   .tabs-header
+      flex-direction: column
+   .hey__wrap
+      padding-bottom: 30px
+   .blandit
+      flex-direction: column
+   .photo-blandit__img
+      max-width: inherit
+      padding-bottom: 20px
+   .blandit__container
+      flex: inherit
+      padding-bottom: 45px
 //work srart
 .work
 
@@ -346,6 +383,14 @@ body
       display: block
       margin: 0 0 0 auto
 //work end
+@media(max-width: 767px)
+   .work__wrap
+      display: block
+   .img-work__photo
+      padding-right: inherit
+      padding-bottom: 20px
+      display: block
+      margin: auto
 //motion start
 .motion
 
@@ -394,6 +439,13 @@ body
    .yellow
       background: #EAD71B
 //motion end
+@media(max-width: 767px)
+   .motion__wrap
+      flex-direction: column-reverse
+   .motion__photo
+      flex: inherit
+   .text-motion__parag
+      width: inherit
 //discover start
 .disci
    width: 100%
@@ -403,7 +455,7 @@ body
       padding-top: 71px
       padding-bottom: 80px
    &__title
-      width: 657px
+      max-width: 657px
       font-size: 64px
       line-height: 64px
       letter-spacing: 0.48px
@@ -412,7 +464,7 @@ body
       font-size: 20px
       line-height: 26px
       letter-spacing: 0.48px
-      width: 565px
+      max-width: 565px
       padding-bottom: 48px
    &__bottom
       padding: 12px 40px 16px
@@ -474,6 +526,10 @@ body
    margin: 0 auto
    width: 134px
 //browser end
+@media(max-width: 767px)
+   .start__container
+      flex-direction: column
+      align-items: center
 //nft start
 .nft
 
@@ -545,61 +601,279 @@ body
 .icon
    &__gallary
 //nft end
-//fqa start
-.fqa
+//spolers start
+.spolers
 
    &__wrap
-      padding-top: 55px
-      max-width: 1072px
+      max-width: 1100px
       margin: 0 auto
+      padding: 0 20px
+      padding-top: 55px
+      padding-bottom: 100px
+
+   &__title
+      font-size: 64px
+      line-height: 64px
+      letter-spacing: 0.48px
+      padding-bottom: 75px
+.block
+   padding-left: 20px
    &__item
 
-.fqa__title
-   padding-bottom: 75px
-   font-size: 64px
-   line-height: 64px
-   letter-spacing: 0.48px
-
-.item-fqa
-
-   &__arrow
-
-   &__text
-      max-width: 400px
-      padding-bottom: 25px
-      display: none
-.arrow-item
-   display: flex
-   justify-content: space-between
    &__title
       font-size: 22px
       line-height: 24px
       letter-spacing: 0.48px
-      padding-bottom: 80px
-   &__line
-      width: 27px
-      height: 17px
+      display: flex
       position: relative
+      padding-bottom: 80px
       &::after,
       &::before
          display: block
          content: ''
          position: absolute
-
          border: 2px solid #79AF98
          background: #79AF98
          width: 17px
          top: 0
       &::after
-         left: 0
+         right: 10px
          transform: rotate(45deg)
       &::before
          right: 0
          transform: rotate(-45deg)
-.item-fqa__arrow
-   &.active
-      &::after
-         transform: rotate(-45deg)
+      &.active
+         &::after
+            transform: rotate(-45deg)
+            border: 2px solid #dcd336
+            background: #dcd336
+         &::before
+            transform: rotate(45deg)
+            border: 2px solid #dcd336
+            background: #dcd336
+.block
+
+   &__text
+      max-width: 400px
+      padding-bottom: 25px
+      display: none
+.one
+
+//spolers end
+//footer start
+.footer
+
+   &__wrap
+      max-width: 1112px
+      margin: 0 auto
+      padding: 0 20px
+      display: flex
+      padding-bottom: 150px
+
+   &__logo
+      flex: 0 1 274px
+   &__help
+      flex: 0 1 338px
+      column-gap: 80px
+   &__list
+   &__loop
+      flex: 0 1 460px
+      padding-left: 30px
+.logo-footer
+
+   &__logotype
+      padding-bottom: 45px
+      flex: 0 0 138px
+   &__parag
+      padding-bottom: 20px
+      font-size: 20px
+      line-height: 20px
+      letter-spacing: 0.48px
+
+.header
+
+   &__icon
+
+.icon-header
+
+   &__svg
+
+.list-footer
+
+   &__title
+      font-size: 20px
+      line-height: 20px
+      letter-spacing: 0.48px
+      padding-bottom: 17px
+   &__item
+      font-size: 15px
+      line-height: 16px
+      letter-spacing: 0.48px
+      padding-bottom: 8px
+.loop-footer
+
+   &__title
+      font-size: 35px
+      line-height: 29px
+      letter-spacing: 0.48px
+      padding-bottom: 16px
+   &__parag
+      font-size: 18px
+      line-height: 26px
+      letter-spacing: 0.48px
+      padding-bottom: 16px
+.search-form
+   display: flex
+   &__wrap
+      width: 100%
+   &__info
+      width: 100%
+      display: flex
+      column-gap: 20px
+   &__field
+
+      background: #F6F6F6
+      border-radius: 20px
+      border: none
+      flex: 0 1 328px
+      &::placeholder
+         font-size: 14px
+         line-height: 16px6
+         letter-spacing: 0.48px
+         color: rgba(47, 47, 47, 0.36)
+         padding-left: 20px
+   &__submit
+      flex: 0 1 80px
+      font-weight: 700
+      font-size: 14px
+      line-height: 16px
+      letter-spacing: 0.48px
+      color: #FFFFFF
+      padding: 11px 14px 13px
+      background: #2F2F2F
+      border-radius: 20px
+      border: none
+
+.logo-footer__wrapper
+   display: flex
+
+.end
+
+   &__wrap
+      max-width: 1112px
+      margin: 0 auto
+      padding: 0 20px
+      display: flex
+      justify-content: space-between
+      padding-bottom: 47px
+   &__parag
+      font-size: 14px
+      line-height: 16px
+      letter-spacing: 0.48px
+   &__paragraf
+      font-size: 15px
+      line-height: 16px
+      letter-spacing: 0.48px
+      span
+         color: #FF7F96
+
+.footer__help
+   display: flex
+
+//footer end
+@media(max-width: 767px)
+   .footer__wrap
+      flex-direction: column
+      align-items: center
+      padding-bottom: 30px
+   .footer__logo
+      flex: 1 1 190px
+   .footer__help
+      flex: 0 1 140px
+   .footer__loop
+      flex: 0 1 184px
+//footer end media
+@media(max-width: 767px)
+   .menu__icon
+      display: block
+      width: 30px
+      height: 18px
+      position: relative
+      z-index: 4
+      cursor: pointer
+      &::after,
+      &::before,
+      span
+         left: 0
+         position: absolute
+         height: 10%
+         width: 100%
+         background: black
+         transition: all 1s ease 0s
+         background: #000000
+      &::after,
       &::before
+         display: block
+         content: ''
+      &::after
+         top: 0
+      &::before
+         bottom: 0
+      span
+         top: 50%
+         transform: scale(1) translate(0px, -50%)
+   .menu__icon.active
+      &::after
+         transition: all 0.3s ease 0s
          transform: rotate(45deg)
-//fqa end
+         top: 9px
+      &::before
+         transition: all 0.3s ease 0s
+         transform: rotate(-45deg)
+         top: 9px
+      span
+         transition: all 1s ease 0s
+         width: 0
+         background: #b90f0f
+         left: 15px
+   .header__menu.active
+      left: 0
+      transition: all 0.3s ease 0s
+   .header
+
+      &::after
+         display: block
+         content: ''
+         position: absolute
+         width: 100%
+         height: 100%
+         top: 0
+         left: 0
+         background: #63ead8
+         z-index: 3
+   .header__menu
+      position: fixed
+      top: 0
+      left: -100%
+      width: 100%
+      height: 100%
+      padding-top: 110px
+      background: rgba(246, 101, 101, 0.9)
+      transition: all 0.3s ease 0s
+@media(max-width: 767px)
+   .button-header__but
+      display: none
+   .header__list
+      display: block
+   .header__wrap
+      justify-content: space-between
+   .list-header__item
+      text-align: center
+      font-size: 64px
+      line-height: 64px
+      letter-spacing: 0.48px
+      padding-bottom: 80px
+
+.header__wrap
+   margin-top: 0
+//media end
